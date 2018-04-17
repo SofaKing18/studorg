@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'page/main'
+  root to: 'page#main'
   resources :schedules
   resources :chemestries
   devise_for :users
