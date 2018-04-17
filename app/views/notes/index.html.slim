@@ -1,24 +1,20 @@
 p#notice
   = notice
 h1
-  | Notes
-table
+  = t('notes')
+table.table.table-striped.table-hover
   thead
     tr
       th
-        | User
+        = t('activerecord.attributes.note.event_dt')
       th
-        | Event dt
+        = t('activerecord.attributes.note.notify_dt')
       th
-        | Notify dt
-      th
-        | Description
+        = t('activerecord.attributes.note.description')
       th[colspan="3"]
   tbody
     - @notes.each do |note|
       tr
-        td
-          = note.user_id
         td
           = note.event_dt
         td
@@ -26,10 +22,10 @@ table
         td
           = note.description
         td
-          = link_to 'Show', note
+          = link_to t('show'), note
         td
-          = link_to 'Edit', edit_note_path(note)
+          = link_to t('edit'), edit_note_path(note)
         td
-          = link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' }
+          = link_to t('destroy'), note, method: :delete, data: { confirm: 'Are you sure?' }
 br
-= link_to 'New Note', new_note_path
+= link_to t('new_note'), new_note_path

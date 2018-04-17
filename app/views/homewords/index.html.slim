@@ -1,24 +1,20 @@
 p#notice
   = notice
 h1
-  | Homewords
-table
+  = t('homewords')
+table.table.table-striped.table-hover
   thead
     tr
       th
-        | User
+        = t('activerecord.attributes.homeword.description')
       th
-        | Description
+        = t('activerecord.attributes.homeword.deadline')
       th
-        | Deadline
-      th
-        | Subject
+        = t('activerecord.attributes.homeword.subject')
       th[colspan="3"]
   tbody
     - @homewords.each do |homeword|
       tr
-        td
-          = homeword.user_id
         td
           = homeword.description
         td
@@ -26,10 +22,10 @@ table
         td
           = homeword.subject_id
         td
-          = link_to 'Show', homeword
+          = link_to t('show'), homeword
         td
-          = link_to 'Edit', edit_homeword_path(homeword)
+          = link_to t('edit'), edit_homeword_path(homeword)
         td
-          = link_to 'Destroy', homeword, method: :delete, data: { confirm: 'Are you sure?' }
+          = link_to t('destroy'), homeword, method: :delete, data: { confirm: 'Are you sure?' }
 br
-= link_to 'New Homeword', new_homeword_path
+= link_to t('new_homeword'), new_homeword_path

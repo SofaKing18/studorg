@@ -1,31 +1,27 @@
 p#notice
   = notice
 h1
-  | Lecture Halls
-table
+  = t('lecture_halls')
+table.table.table-striped.table-hover
   thead
     tr
       th
-        | User
+        = t('activerecord.attributes.lecture_hall.name')
       th
-        | Name
-      th
-        | Description
+        = t('activerecord.attributes.lecture_hall.description')
       th[colspan="3"]
   tbody
     - @lecture_halls.each do |lecture_hall|
       tr
         td
-          = lecture_hall.user_id
-        td
           = lecture_hall.name
         td
           = lecture_hall.description
         td
-          = link_to 'Show', lecture_hall
+          = link_to t('show'), lecture_hall
         td
-          = link_to 'Edit', edit_lecture_hall_path(lecture_hall)
+          = link_to t('edit'), edit_lecture_hall_path(lecture_hall)
         td
-          = link_to 'Destroy', lecture_hall, method: :delete, data: { confirm: 'Are you sure?' }
+          = link_to t('destroy'), lecture_hall, method: :delete, data: { confirm: 'Are you sure?' }
 br
-= link_to 'New Lecture Hall', new_lecture_hall_path
+= link_to t('new_lecture_hall'), new_lecture_hall_path

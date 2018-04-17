@@ -1,4 +1,36 @@
 ru:
+  back: Назад
+  show: Показать
+  edit: Редактировать
+  destroy: Удалить
+  
+  new_timeline: Добавить звонок
+  timelines: Расписания звонков
+
+  subjects: Дисциплины
+  new_subject: Добавить дисциплину
+  
+  notes: Заметки
+  new_note: Добавить заметку
+
+  homewords: Домашние задания
+  new_homeword: Добавить домашнее задание
+
+  new_lecture_hall: Добавить аудиторию
+  lecture_halls: Аудитории
+
+  schedules: Занятия
+  new_schedule: Добавить занятие
+ 
+  groups: Группы
+  new_group: Добавить группу
+
+  new_teacher: Добавить преподавателя
+  teachers: Преподаватели
+  
+  chemestries: Семестры
+  new_chemestry: Добавить семестр
+
   activerecord:
     models:
       teacher: 
@@ -12,6 +44,8 @@ ru:
       subject:
         one: запись
       timeline:
+        one: запись
+      group:
         one: запись
     attributes:
       teacher:
@@ -32,7 +66,20 @@ ru:
       subject:
         name: Наименование
         short_name: Краткое название
+      note:
+        event_dt: Дата события
+        notify_dt: Когда напомнить
+        description: Описание
       timeline:
         name: Наименование
         start_time: Время начала
         end_time: Время окончания
+      group:
+        number:  Номер
+      schedule:
+        chemestry: Семестр
+        subject: Дисциплина
+        lecture_hall: Аудитория
+        teacher: Преподаватель
+        timeline: Пара
+        date: Дата

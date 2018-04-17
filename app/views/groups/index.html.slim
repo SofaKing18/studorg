@@ -1,27 +1,23 @@
 p#notice
   = notice
 h1
-  | Groups
-table
+  = t('groups')
+table.table.table-striped.table-hover
   thead
     tr
       th
-        | User
-      th
-        | Number
+        = t('activerecord.attributes.group.number')
       th[colspan="3"]
   tbody
     - @groups.each do |group|
       tr
         td
-          = group.user_id
-        td
           = group.number
         td
-          = link_to 'Show', group
+          = link_to t('show'), group
         td
-          = link_to 'Edit', edit_group_path(group)
+          = link_to t('edit'), edit_group_path(group)
         td
-          = link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' }
+          = link_to t('destroy'), group, method: :delete, data: { confirm: 'Are you sure?' }
 br
-= link_to 'New Group', new_group_path
+= link_to t('new_group'), new_group_path

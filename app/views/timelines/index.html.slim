@@ -1,24 +1,20 @@
 p#notice
   = notice
 h1
-  | Timelines
-table
-  thead
+  = t('timelines')
+table.table.table-striped.table-hover
+  thead.info
     tr
       th
-        | User
+        = t('activerecord.attributes.timeline.name')
       th
-        | Name
+        = t('activerecord.attributes.timeline.start_time')
       th
-        | Start time
-      th
-        | End time
+        = t('activerecord.attributes.timeline.end_time')
       th[colspan="3"]
   tbody
     - @timelines.each do |timeline|
       tr
-        td
-          = timeline.user_id
         td
           = timeline.name
         td
@@ -26,10 +22,10 @@ table
         td
           = timeline.end_time
         td
-          = link_to 'Show', timeline
+          = link_to t('show'), timeline
         td
-          = link_to 'Edit', edit_timeline_path(timeline)
+          = link_to t('edit'), edit_timeline_path(timeline)
         td
-          = link_to 'Destroy', timeline, method: :delete, data: { confirm: 'Are you sure?' }
+          = link_to t('destroy'), timeline, method: :delete, data: { confirm: 'Are you sure?' }
 br
-= link_to 'New Timeline', new_timeline_path
+= link_to t('new_timeline'), new_timeline_path

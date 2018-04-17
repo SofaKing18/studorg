@@ -9,8 +9,6 @@
           li
             = message
   = form.hidden_field :user_id, id: :note_user_id, value: current_user.id
-'
-
   = form.datetime_select :event_dt, id: :note_event_dt
   = form.datetime_select :notify_dt, id: :note_notify_dt
   = form.text_field :description, id: :note_description

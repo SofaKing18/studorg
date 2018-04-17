@@ -1,14 +1,14 @@
 p#notice
   = notice
 h1
-  | Subjects
-table
+  = t('subjects')
+table.table.table-striped.table-hover
   thead
     tr
       th
-        | Name
+        = t('activerecord.attributes.subject.name')
       th
-        | Short name
+        = t('activerecord.attributes.subject.short_name')
       th[colspan="3"]
   tbody
     - @subjects.each do |subject|
@@ -18,10 +18,10 @@ table
         td
           = subject.short_name
         td
-          = link_to 'Show', subject
+          = link_to t('show'), subject
         td
-          = link_to 'Edit', edit_subject_path(subject)
+          = link_to t('edit'), edit_subject_path(subject)
         td
-          = link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' }
+          = link_to t('destroy'), subject, method: :delete, data: { confirm: 'Are you sure?' }
 br
-= link_to 'New Subject', new_subject_path
+= link_to t('new_subject'), new_subject_path

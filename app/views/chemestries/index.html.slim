@@ -1,24 +1,20 @@
 p#notice
   = notice
 h1
-  | Chemestries
-table
+  = t('chemestries')
+table.table.table-striped.table-hover
   thead
     tr
       th
-        | User
+        = t('activerecord.attributes.chemestry.name')
       th
-        | Name
+        = t('activerecord.attributes.chemestry.start_date')
       th
-        | Start date
-      th
-        | End date
+        = t('activerecord.attributes.chemestry.end_date')
       th[colspan="3"]
   tbody
     - @chemestries.each do |chemestry|
       tr
-        td
-          = chemestry.user_id
         td
           = chemestry.name
         td
@@ -26,10 +22,10 @@ table
         td
           = chemestry.end_date
         td
-          = link_to 'Show', chemestry
+          = link_to t('show'), chemestry
         td
-          = link_to 'Edit', edit_chemestry_path(chemestry)
+          = link_to t('edit'), edit_chemestry_path(chemestry)
         td
-          = link_to 'Destroy', chemestry, method: :delete, data: { confirm: 'Are you sure?' }
+          = link_to t('destroy'), chemestry, method: :delete, data: { confirm: 'Are you sure?' }
 br
-= link_to 'New Chemestry', new_chemestry_path
+= link_to t('new_chemestry'), new_chemestry_path
