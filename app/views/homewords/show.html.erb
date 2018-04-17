@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @homeword.user_id %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @homeword.description %>
+</p>
+
+<p>
+  <strong>Deadline:</strong>
+  <%= @homeword.deadline %>
+</p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @homeword.subject_id %>
+</p>
+
+<%= link_to 'Edit', edit_homeword_path(@homeword) %> |
+<%= link_to 'Back', homewords_path %>

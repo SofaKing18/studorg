@@ -1,0 +1,37 @@
+<%= form_with(model: homeword, local: true) do |form| %>
+  <% if homeword.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(homeword.errors.count, "error") %> prohibited this homeword from being saved:</h2>
+
+      <ul>
+      <% homeword.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id, id: :homeword_user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description, id: :homeword_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :deadline %>
+    <%= form.datetime_select :deadline, id: :homeword_deadline %>
+  </div>
+
+  <div class="field">
+    <%= form.label :subject_id %>
+    <%= form.number_field :subject_id, id: :homeword_subject_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

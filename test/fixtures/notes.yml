@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  event_dt: 2018-04-17 21:49:21
+  notify_dt: 2018-04-17 21:49:21
+  description: MyString
+
+two:
+  user_id: 1
+  event_dt: 2018-04-17 21:49:21
+  notify_dt: 2018-04-17 21:49:21
+  description: MyString

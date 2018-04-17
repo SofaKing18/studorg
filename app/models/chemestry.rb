@@ -1,0 +1,2 @@
+class Chemestry < ApplicationRecord
+end

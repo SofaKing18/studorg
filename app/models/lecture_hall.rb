@@ -1,0 +1,2 @@
+class LectureHall < ApplicationRecord
+end

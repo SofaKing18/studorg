@@ -1,0 +1,8 @@
+ru:
+en:
+  activerecord:
+    models:
+      user: Пользователь
+    attributes:
+      Password: Пароль
+      Email: Электорнная почта
