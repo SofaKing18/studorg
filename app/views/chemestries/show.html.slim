@@ -1,0 +1,21 @@
+p#notice
+  = notice
+p
+  strong
+    | User:
+  = @chemestry.user_id
+p
+  strong
+    | Name:
+  = @chemestry.name
+p
+  strong
+    | Start date:
+  = @chemestry.start_date
+p
+  strong
+    | End date:
+  = @chemestry.end_date
+= link_to 'Edit', edit_chemestry_path(@chemestry)
+|  | 
+= link_to 'Back', chemestries_path

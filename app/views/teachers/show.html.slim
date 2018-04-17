@@ -1,0 +1,21 @@
+p#notice
+  = notice
+p
+  strong
+    | User:
+  = @teacher.user_id
+p
+  strong
+    | Last name:
+  = @teacher.last_name
+p
+  strong
+    | First name:
+  = @teacher.first_name
+p
+  strong
+    | Middle name:
+  = @teacher.middle_name
+= link_to 'Edit', edit_teacher_path(@teacher)
+|  | 
+= link_to 'Back', teachers_path

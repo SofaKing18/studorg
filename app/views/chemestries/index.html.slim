@@ -1,0 +1,35 @@
+p#notice
+  = notice
+h1
+  | Chemestries
+table
+  thead
+    tr
+      th
+        | User
+      th
+        | Name
+      th
+        | Start date
+      th
+        | End date
+      th[colspan="3"]
+  tbody
+    - @chemestries.each do |chemestry|
+      tr
+        td
+          = chemestry.user_id
+        td
+          = chemestry.name
+        td
+          = chemestry.start_date
+        td
+          = chemestry.end_date
+        td
+          = link_to 'Show', chemestry
+        td
+          = link_to 'Edit', edit_chemestry_path(chemestry)
+        td
+          = link_to 'Destroy', chemestry, method: :delete, data: { confirm: 'Are you sure?' }
+br
+= link_to 'New Chemestry', new_chemestry_path

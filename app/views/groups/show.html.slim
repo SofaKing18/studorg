@@ -1,0 +1,13 @@
+p#notice
+  = notice
+p
+  strong
+    | User:
+  = @group.user_id
+p
+  strong
+    | Number:
+  = @group.number
+= link_to 'Edit', edit_group_path(@group)
+|  | 
+= link_to 'Back', groups_path

@@ -1,0 +1,17 @@
+p#notice
+  = notice
+p
+  strong
+    | User:
+  = @lecture_hall.user_id
+p
+  strong
+    | Name:
+  = @lecture_hall.name
+p
+  strong
+    | Description:
+  = @lecture_hall.description
+= link_to 'Edit', edit_lecture_hall_path(@lecture_hall)
+|  | 
+= link_to 'Back', lecture_halls_path

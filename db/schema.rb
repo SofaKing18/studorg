@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180417185705) do
+ActiveRecord::Schema.define(version: 20180417192805) do
+
+  create_table "chemestries", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "name"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "groups", force: :cascade do |t|
     t.integer "user_id"
@@ -41,6 +50,18 @@ ActiveRecord::Schema.define(version: 20180417185705) do
     t.datetime "event_dt"
     t.datetime "notify_dt"
     t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "schedules", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "chemestry_id"
+    t.integer "subject_id"
+    t.integer "lecture_hall_id"
+    t.integer "teacher_id"
+    t.integer "timeline_id"
+    t.datetime "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

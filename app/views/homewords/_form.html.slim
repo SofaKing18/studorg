@@ -1,0 +1,24 @@
+= form_with(model: homeword, local: true) do |form|
+  - if homeword.errors.any?
+    #error_explanation
+      h2
+        = pluralize(homeword.errors.count, "error")
+        |  prohibited this homeword from being saved:
+      ul
+        - homeword.errors.full_messages.each do |message|
+          li
+            = message
+  .field
+    = form.label :user_id
+    = form.number_field :user_id, id: :homeword_user_id
+  .field
+    = form.label :description
+    = form.text_field :description, id: :homeword_description
+  .field
+    = form.label :deadline
+    = form.datetime_select :deadline, id: :homeword_deadline
+  .field
+    = form.label :subject_id
+    = form.number_field :subject_id, id: :homeword_subject_id
+  .actions
+    = form.submit

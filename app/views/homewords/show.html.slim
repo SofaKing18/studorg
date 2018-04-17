@@ -1,0 +1,21 @@
+p#notice
+  = notice
+p
+  strong
+    | User:
+  = @homeword.user_id
+p
+  strong
+    | Description:
+  = @homeword.description
+p
+  strong
+    | Deadline:
+  = @homeword.deadline
+p
+  strong
+    | Subject:
+  = @homeword.subject_id
+= link_to 'Edit', edit_homeword_path(@homeword)
+|  | 
+= link_to 'Back', homewords_path

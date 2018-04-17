@@ -1,0 +1,24 @@
+= form_with(model: chemestry, local: true) do |form|
+  - if chemestry.errors.any?
+    #error_explanation
+      h2
+        = pluralize(chemestry.errors.count, "error")
+        |  prohibited this chemestry from being saved:
+      ul
+        - chemestry.errors.full_messages.each do |message|
+          li
+            = message
+  .field
+    = form.label :user_id
+    = form.number_field :user_id, id: :chemestry_user_id
+  .field
+    = form.label :name
+    = form.text_field :name, id: :chemestry_name
+  .field
+    = form.label :start_date
+    = form.datetime_select :start_date, id: :chemestry_start_date
+  .field
+    = form.label :end_date
+    = form.datetime_select :end_date, id: :chemestry_end_date
+  .actions
+    = form.submit

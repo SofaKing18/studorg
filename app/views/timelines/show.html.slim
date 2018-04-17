@@ -1,0 +1,21 @@
+p#notice
+  = notice
+p
+  strong
+    | User:
+  = @timeline.user_id
+p
+  strong
+    | Name:
+  = @timeline.name
+p
+  strong
+    | Start time:
+  = @timeline.start_time
+p
+  strong
+    | End time:
+  = @timeline.end_time
+= link_to 'Edit', edit_timeline_path(@timeline)
+|  | 
+= link_to 'Back', timelines_path

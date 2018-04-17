@@ -1,0 +1,21 @@
+p#notice
+  = notice
+p
+  strong
+    | User:
+  = @note.user_id
+p
+  strong
+    | Event dt:
+  = @note.event_dt
+p
+  strong
+    | Notify dt:
+  = @note.notify_dt
+p
+  strong
+    | Description:
+  = @note.description
+= link_to 'Edit', edit_note_path(@note)
+|  | 
+= link_to 'Back', notes_path

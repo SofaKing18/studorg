@@ -1,0 +1,47 @@
+p#notice
+  = notice
+h1
+  | Schedules
+table
+  thead
+    tr
+      th
+        | User
+      th
+        | Chemestry
+      th
+        | Subject
+      th
+        | Lecture hall
+      th
+        | Teacher
+      th
+        | Timeline
+      th
+        | Date
+      th[colspan="3"]
+  tbody
+    - @schedules.each do |schedule|
+      tr
+        td
+          = schedule.user_id
+        td
+          = schedule.chemestry_id
+        td
+          = schedule.subject_id
+        td
+          = schedule.lecture_hall_id
+        td
+          = schedule.teacher_id
+        td
+          = schedule.timeline_id
+        td
+          = schedule.date
+        td
+          = link_to 'Show', schedule
+        td
+          = link_to 'Edit', edit_schedule_path(schedule)
+        td
+          = link_to 'Destroy', schedule, method: :delete, data: { confirm: 'Are you sure?' }
+br
+= link_to 'New Schedule', new_schedule_path

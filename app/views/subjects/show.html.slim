@@ -1,0 +1,13 @@
+p#notice
+  = notice
+p
+  strong
+    | Name:
+  = @subject.name
+p
+  strong
+    | Short name:
+  = @subject.short_name
+= link_to 'Edit', edit_subject_path(@subject)
+|  | 
+= link_to 'Back', subjects_path

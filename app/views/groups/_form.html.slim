@@ -1,0 +1,18 @@
+= form_with(model: group, local: true) do |form|
+  - if group.errors.any?
+    #error_explanation
+      h2
+        = pluralize(group.errors.count, "error")
+        |  prohibited this group from being saved:
+      ul
+        - group.errors.full_messages.each do |message|
+          li
+            = message
+  .field
+    = form.label :user_id
+    = form.number_field :user_id, id: :group_user_id
+  .field
+    = form.label :number
+    = form.text_field :number, id: :group_number
+  .actions
+    = form.submit

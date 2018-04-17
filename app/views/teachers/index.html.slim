@@ -1,0 +1,35 @@
+p#notice
+  = notice
+h1
+  | Teachers
+table
+  thead
+    tr
+      th
+        | User
+      th
+        | Last name
+      th
+        | First name
+      th
+        | Middle name
+      th[colspan="3"]
+  tbody
+    - @teachers.each do |teacher|
+      tr
+        td
+          = teacher.user_id
+        td
+          = teacher.last_name
+        td
+          = teacher.first_name
+        td
+          = teacher.middle_name
+        td
+          = link_to 'Show', teacher
+        td
+          = link_to 'Edit', edit_teacher_path(teacher)
+        td
+          = link_to 'Destroy', teacher, method: :delete, data: { confirm: 'Are you sure?' }
+br
+= link_to 'New Teacher', new_teacher_path

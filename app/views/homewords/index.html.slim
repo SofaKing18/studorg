@@ -1,0 +1,35 @@
+p#notice
+  = notice
+h1
+  | Homewords
+table
+  thead
+    tr
+      th
+        | User
+      th
+        | Description
+      th
+        | Deadline
+      th
+        | Subject
+      th[colspan="3"]
+  tbody
+    - @homewords.each do |homeword|
+      tr
+        td
+          = homeword.user_id
+        td
+          = homeword.description
+        td
+          = homeword.deadline
+        td
+          = homeword.subject_id
+        td
+          = link_to 'Show', homeword
+        td
+          = link_to 'Edit', edit_homeword_path(homeword)
+        td
+          = link_to 'Destroy', homeword, method: :delete, data: { confirm: 'Are you sure?' }
+br
+= link_to 'New Homeword', new_homeword_path

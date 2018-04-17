@@ -1,0 +1,21 @@
+= form_with(model: lecture_hall, local: true) do |form|
+  - if lecture_hall.errors.any?
+    #error_explanation
+      h2
+        = pluralize(lecture_hall.errors.count, "error")
+        |  prohibited this lecture_hall from being saved:
+      ul
+        - lecture_hall.errors.full_messages.each do |message|
+          li
+            = message
+  .field
+    = form.label :user_id
+    = form.number_field :user_id, id: :lecture_hall_user_id
+  .field
+    = form.label :name
+    = form.text_field :name, id: :lecture_hall_name
+  .field
+    = form.label :description
+    = form.text_field :description, id: :lecture_hall_description
+  .actions
+    = form.submit

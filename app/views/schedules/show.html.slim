@@ -1,0 +1,33 @@
+p#notice
+  = notice
+p
+  strong
+    | User:
+  = @schedule.user_id
+p
+  strong
+    | Chemestry:
+  = @schedule.chemestry_id
+p
+  strong
+    | Subject:
+  = @schedule.subject_id
+p
+  strong
+    | Lecture hall:
+  = @schedule.lecture_hall_id
+p
+  strong
+    | Teacher:
+  = @schedule.teacher_id
+p
+  strong
+    | Timeline:
+  = @schedule.timeline_id
+p
+  strong
+    | Date:
+  = @schedule.date
+= link_to 'Edit', edit_schedule_path(@schedule)
+|  | 
+= link_to 'Back', schedules_path
