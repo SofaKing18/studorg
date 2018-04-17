@@ -1,8 +1,38 @@
 ru:
-en:
   activerecord:
     models:
-      user: Пользователь
+      teacher: 
+        one: запись
+      chemestry:
+        one: запись
+      homeword:
+        one: запись
+      lecture_hall:
+        one: запись
+      subject:
+        one: запись
+      timeline:
+        one: запись
     attributes:
-      Password: Пароль
-      Email: Электорнная почта
+      teacher:
+        last_name: Фамилия
+        first_name: Имя
+        middle_name: Отчество
+      chemestry:
+        name: Наименование
+        end_date: Дата окончания
+        start_date: Дата начала
+      homeword:
+        description: Описание
+        deadline: Крайний срок
+        subject: Предмет
+      lecture_hall:
+        name: Наименование
+        description: Описание
+      subject:
+        name: Наименование
+        short_name: Краткое название
+      timeline:
+        name: Наименование
+        start_time: Время начала
+        end_time: Время окончания

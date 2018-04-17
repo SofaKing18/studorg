@@ -4,7 +4,7 @@ class HomewordsController < ApplicationController
   # GET /homewords
   # GET /homewords.json
   def index
-    @homewords = current_user.homeword
+    @homewords = current_user.homewords
   end
 
   # GET /homewords/1

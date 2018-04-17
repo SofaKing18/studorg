@@ -1,4 +1,4 @@
-= form_with(model: note, local: true) do |form|
+= bootstrap_form_with(model: note, local: true) do |form|
   - if note.errors.any?
     #error_explanation
       h2
@@ -8,17 +8,11 @@
         - note.errors.full_messages.each do |message|
           li
             = message
-  .field
-    = form.label :user_id
-    = form.number_field :user_id, id: :note_user_id
-  .field
-    = form.label :event_dt
-    = form.datetime_select :event_dt, id: :note_event_dt
-  .field
-    = form.label :notify_dt
-    = form.datetime_select :notify_dt, id: :note_notify_dt
-  .field
-    = form.label :description
-    = form.text_field :description, id: :note_description
+  = form.hidden_field :user_id, id: :note_user_id, value: current_user.id
+'
+
+  = form.datetime_select :event_dt, id: :note_event_dt
+  = form.datetime_select :notify_dt, id: :note_notify_dt
+  = form.text_field :description, id: :note_description
   .actions
     = form.submit

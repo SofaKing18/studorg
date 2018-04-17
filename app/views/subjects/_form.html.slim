@@ -1,4 +1,4 @@
-= form_with(model: subject, local: true) do |form|
+= bootstrap_form_with(model: subject, local: true) do |form|
   - if subject.errors.any?
     #error_explanation
       h2
@@ -8,11 +8,8 @@
         - subject.errors.full_messages.each do |message|
           li
             = message
-  .field
-    = form.label :name
-    = form.text_field :name, id: :subject_name
-  .field
-    = form.label :short_name
-    = form.text_field :short_name, id: :subject_short_name
+  = form.hidden_field :user_id, id: :subject_user_id, value: current_user.id
+  = form.text_field :name, id: :subject_name
+  = form.text_field :short_name, id: :subject_short_name
   .actions
     = form.submit
