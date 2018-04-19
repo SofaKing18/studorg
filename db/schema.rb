@@ -12,6 +12,10 @@
 
 ActiveRecord::Schema.define(version: 20180417194555) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+  enable_extension "uuid-ossp"
+
   create_table "chemestries", force: :cascade do |t|
     t.integer "user_id"
     t.string "name"
@@ -52,6 +56,11 @@ ActiveRecord::Schema.define(version: 20180417194555) do
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "people", id: false, force: :cascade do |t|
+    t.text "first_name"
+    t.text "last_name"
   end
 
   create_table "schedules", force: :cascade do |t|
@@ -107,6 +116,10 @@ ActiveRecord::Schema.define(version: 20180417194555) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "x", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
+    t.integer "y"
   end
 
 end

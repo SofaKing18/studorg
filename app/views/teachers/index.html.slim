@@ -6,11 +6,11 @@ table.table.table-striped.table-hover
   thead
     tr
       th
-        | Last name
+        = t('activerecord.attributes.teacher.last_name')
       th
-        | First name
+        = t('activerecord.attributes.teacher.first_name')
       th
-        | Middle name
+        = t('activerecord.attributes.teacher.middle_name')
       th[colspan="3"]
   tbody
     - @teachers.each do |teacher|
