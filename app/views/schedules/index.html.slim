@@ -34,8 +34,6 @@ table.table.table-striped.table-hover
         td
           = schedule.date
         td
-          = link_to t('show'), schedule
-        td
           = link_to t('edit'), edit_schedule_path(schedule)
         td
           = link_to t('destroy'), schedule, method: :delete, data: { confirm: 'Are you sure?' }

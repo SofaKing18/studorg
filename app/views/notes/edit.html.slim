@@ -1,6 +1,5 @@
 h1
   = t('note.edit')
 = render 'form', note: @note
-= link_to t('show'), @note
-|  | 
+hr
 = link_to t('back'), notes_path
