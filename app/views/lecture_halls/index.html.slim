@@ -18,8 +18,6 @@ table.table.table-striped.table-hover
         td
           = lecture_hall.description
         td
-          = link_to t('show'), lecture_hall
-        td
           = link_to t('edit'), edit_lecture_hall_path(lecture_hall)
         td
           = link_to t('destroy'), lecture_hall, method: :delete, data: { confirm: 'Are you sure?' }

@@ -28,7 +28,7 @@ class HomewordsController < ApplicationController
 
     respond_to do |format|
       if @homeword.save
-        format.html { redirect_to @homeword, notice: 'Homeword was successfully created.' }
+        format.html { redirect_to homewords_path, notice: t('homeword.created') }
         format.json { render :show, status: :created, location: @homeword }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class HomewordsController < ApplicationController
   def update
     respond_to do |format|
       if @homeword.update(homeword_params)
-        format.html { redirect_to @homeword, notice: 'Homeword was successfully updated.' }
+        format.html { redirect_to homewords_path, notice: t('homeword.updated') }
         format.json { render :show, status: :ok, location: @homeword }
       else
         format.html { render :edit }

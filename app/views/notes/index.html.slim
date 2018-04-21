@@ -16,13 +16,11 @@ table.table.table-striped.table-hover
     - @notes.each do |note|
       tr
         td
-          = note.event_dt
+          = note.event_dt.strftime("%d.%m.%Y %H:%M")
         td
-          = note.notify_dt
+          = note.notify_dt.strftime("%d.%m.%Y %H:%M")
         td
           = note.description
-        td
-          = link_to t('show'), note
         td
           = link_to t('edit'), edit_note_path(note)
         td

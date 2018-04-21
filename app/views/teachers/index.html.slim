@@ -22,8 +22,6 @@ table.table.table-striped.table-hover
         td
           = teacher.middle_name
         td
-          = link_to t('show'), teacher
-        td
           = link_to t('edit'), edit_teacher_path(teacher)
         td
           = link_to t('destroy'), teacher, method: :delete, data: { confirm: 'Are you sure?' }

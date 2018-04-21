@@ -18,11 +18,9 @@ table.table.table-striped.table-hover
         td
           = homeword.description
         td
-          = homeword.deadline
+          = homeword.deadline.strftime("%d.%m.%Y")
         td
-          = homeword.subject_id
-        td
-          = link_to t('show'), homeword
+          = homeword.subject.name
         td
           = link_to t('edit'), edit_homeword_path(homeword)
         td

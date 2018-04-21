@@ -12,6 +12,6 @@
   = form.hidden_field :user_id, id: :homeword_user_id, value: current_user.id
   = form.text_area :description, id: :homeword_description
   = form.date_select :deadline, id: :homeword_deadline
-  = form.number_field :subject_id, id: :homeword_subject_id
+  = form.select :subject_id, Subject.pluck(:name, :id),  id: :homeword_subject_id, class: 'long_select', label: t('activerecord.attributes.homeword.subject')
   .actions
     = form.submit

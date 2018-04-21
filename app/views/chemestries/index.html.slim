@@ -18,11 +18,9 @@ table.table.table-striped.table-hover
         td
           = chemestry.name
         td
-          = chemestry.start_date
+          = chemestry.start_date.strftime("%d.%m.%Y")
         td
-          = chemestry.end_date
-        td
-          = link_to t('show'), chemestry
+          = chemestry.end_date.strftime("%d.%m.%Y")
         td
           = link_to t('edit'), edit_chemestry_path(chemestry)
         td

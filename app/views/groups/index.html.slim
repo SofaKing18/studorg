@@ -14,8 +14,6 @@ table.table.table-striped.table-hover
         td
           = group.number
         td
-          = link_to t('show'), group
-        td
           = link_to t('edit'), edit_group_path(group)
         td
           = link_to t('destroy'), group, method: :delete, data: { confirm: 'Are you sure?' }

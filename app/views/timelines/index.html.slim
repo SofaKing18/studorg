@@ -18,11 +18,9 @@ table.table.table-striped.table-hover
         td
           = timeline.name
         td
-          = timeline.start_time
+          = timeline.start_time.strftime("%H:%M")
         td
-          = timeline.end_time
-        td
-          = link_to t('show'), timeline
+          = timeline.end_time.strftime("%H:%M")
         td
           = link_to t('edit'), edit_timeline_path(timeline)
         td

@@ -28,7 +28,7 @@ class TimelinesController < ApplicationController
 
     respond_to do |format|
       if @timeline.save
-        format.html { redirect_to @timeline, notice: 'Timeline was successfully created.' }
+        format.html { redirect_to timelines_url, notice: t('timeline.created') }
         format.json { render :show, status: :created, location: @timeline }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class TimelinesController < ApplicationController
   def update
     respond_to do |format|
       if @timeline.update(timeline_params)
-        format.html { redirect_to @timeline, notice: 'Timeline was successfully updated.' }
+        format.html { redirect_to timelines_url, notice: t('timeline.updated') }
         format.json { render :show, status: :ok, location: @timeline }
       else
         format.html { render :edit }

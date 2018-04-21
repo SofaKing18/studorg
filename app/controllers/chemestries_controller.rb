@@ -28,7 +28,7 @@ class ChemestriesController < ApplicationController
 
     respond_to do |format|
       if @chemestry.save
-        format.html { redirect_to @chemestry, notice: 'Chemestry was successfully created.' }
+        format.html { redirect_to chemestries_path, notice: t('chemestry.created') }
         format.json { render :show, status: :created, location: @chemestry }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class ChemestriesController < ApplicationController
   def update
     respond_to do |format|
       if @chemestry.update(chemestry_params)
-        format.html { redirect_to @chemestry, notice: 'Chemestry was successfully updated.' }
+        format.html { redirect_to chemestries_path, notice: t('chemestry.updated') }
         format.json { render :show, status: :ok, location: @chemestry }
       else
         format.html { render :edit }

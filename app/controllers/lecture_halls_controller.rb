@@ -28,7 +28,7 @@ class LectureHallsController < ApplicationController
 
     respond_to do |format|
       if @lecture_hall.save
-        format.html { redirect_to @lecture_hall, notice: 'Lecture hall was successfully created.' }
+        format.html { redirect_to lecture_halls_path, notice: t('lecture_hall.created') }
         format.json { render :show, status: :created, location: @lecture_hall }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class LectureHallsController < ApplicationController
   def update
     respond_to do |format|
       if @lecture_hall.update(lecture_hall_params)
-        format.html { redirect_to @lecture_hall, notice: 'Lecture hall was successfully updated.' }
+        format.html { redirect_to lecture_halls_path, notice: t('lecture_hall.updated') }
         format.json { render :show, status: :ok, location: @lecture_hall }
       else
         format.html { render :edit }
