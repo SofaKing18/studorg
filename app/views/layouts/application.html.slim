@@ -24,8 +24,12 @@ html
                   | Семестры
 
               li.nav-item.active
-                a.nav-link href=groups_path
-                  | Группы
+                a.nav-link href=subjects_path
+                  | Дисциплины
+
+              li.nav-item.active
+                a.nav-link href=homewords_path
+                  | Домашняя работа
 
               li.nav-item.active
                 a.nav-link href=teachers_path
@@ -36,20 +40,14 @@ html
                   | Аудитории
 
               li.nav-item.active
-                a.nav-link href=homewords_path
-                  | Домашняя работа
+                a.nav-link href=timelines_path
+                  | Расписание звонков
 
               li.nav-item.active
                 a.nav-link href=notes_path
                   | Заметки
 
-              li.nav-item.active
-                a.nav-link href=subjects_path
-                  | Дисциплины
                               
-              li.nav-item.active
-                a.nav-link href=timelines_path
-                  | Расписание звонков
 
               li.nav-item.active
                 = link_to("Профиль", edit_user_registration_path, class: 'nav-link')
