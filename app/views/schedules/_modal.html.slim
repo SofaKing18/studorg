@@ -1,0 +1,31 @@
+#myModal.modal.fade
+  .modal-dialog
+    .modal-content
+      /! Modal Header
+      .modal-header
+        h4.modal-title Нечетная неделя - 3 пара - Вт.
+        button.close data-dismiss="modal" type="button"  &times;
+      /! Modal body
+      .modal-body
+        .form-group
+          label for="homeword_subject_id"  Дисциплина
+          select.form-control.float-right name="homeword[subject_id]"  style="width: 300px"
+            option selected="selected" value="1"  Физическая культура	
+            option value="2"  Информатика
+  
+        .form-group
+          label for="homeword_subject_id"  Преподаватель
+          select.form-control.float-right name="homeword[subject_id]" style="width: 300px"
+            option selected="selected" value="1"  Иванов Петр Генадьевич
+            option value="2"  Информатика
+
+        .form-group
+          label for="homeword_subject_id"  Аудитория
+          select.form-control.float-right name="homeword[subject_id]"  style="width: 300px"
+            option selected="selected" value="1"  Улица
+      
+              
+  
+      /! Modal footer
+      .modal-footer
+        button.btn.btn-info data-dismiss="modal" type="button"  Добавить

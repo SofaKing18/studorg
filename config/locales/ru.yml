@@ -61,7 +61,7 @@ ru:
   lecture_halls: Аудитории
 
   schedules: Занятия
-  new_schedule: Добавить занятие
+  new_schedule: Добавить расписание
  
   groups: Группы
   new_group: Добавить группу
@@ -82,6 +82,8 @@ ru:
         one: запись
       lecture_hall:
         one: запись
+      schedule:
+        one:  расписание
       subject:
         one: запись
       timeline:

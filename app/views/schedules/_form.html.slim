@@ -10,12 +10,24 @@
             = message
 
   = form.hidden_field :user_id, id: :schedule_user_id, value: current_user.id
+  = form.select :chemestry_id, Chemestry.pluck(:name, :id),  id: :homeword_subject_id, class: 'long_select', label: t('activerecord.attributes.schedule.chemestry')
+  h1
+    | Нечетная неделя
+  = render partial: "table", locals: {dates: ["Пн.", "Вт.", "Ср.", "Чт.", "Пт.", "Сб.", "Вс."]}
+  hr
+  h1
+    | Четная неделя
+  = render partial: "table", locals: {dates: ["Пн.", "Вт.", "Ср.", "Чт.", "Пт.", "Сб.", "Вс."]}
+  hr
+  h1
+    | Особенные дни
+  = render partial: "table", locals: {dates: [" "]}
+  .btn.btn-info.float-right
+    | Добавить день
 
-  = form.number_field :chemestry_id, id: :schedule_chemestry_id
-  = form.number_field :subject_id, id: :schedule_subject_id
-  = form.number_field :lecture_hall_id, id: :schedule_lecture_hall_id
-  = form.number_field :teacher_id, id: :schedule_teacher_id
-  = form.number_field :timeline_id, id: :schedule_timeline_id
-  = form.datetime_select :date, id: :schedule_date
+  = render partial: "modal"
+
+
+  hr  
   .actions
     = form.submit
