@@ -1,2 +1,42 @@
-h1 Page#main
-p Find me in app/views/page/main.html.slim
+h1 Главная страница
+
+
+.form-group.row
+  label.col-3.col-form-label for="example-search-input"  Поиск
+  .col-6
+    input#example-search-input.form-control type="search" value=("найти...") /
+  .col-3.btn.btn-info Найти
+hr
+h3 Актуальные записи (2018.05.29):
+table.table.table-stripped.table-hover
+  thead
+    tr
+      th Время
+      th Тип
+      th Описание
+  tbody
+    tr 
+
+      td 17:20
+      td Заметка
+      td Поздравить бабушку с 75 летием
+    tr
+
+      td 13:50
+      td Дисциплина
+      td Информационная безопасность
+    tr
+
+      td 12:10
+      td Дисциплина
+      td Социология
+    tr
+
+      td 10:25
+      td Дисциплина
+      td Социология
+    tr
+      
+      td 08:45
+      td Дисциплина
+      td Физическая культура	
