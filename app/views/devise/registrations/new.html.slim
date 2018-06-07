@@ -1,16 +1,18 @@
 h2
-  | Sign up
+  | Регистрация
 = bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
   = devise_error_messages!
-
+  = f.text_field :last_name, label: 'Фамилия'
+  = f.text_field :first_name, label: 'Имя'
+  = f.text_field :middle_name, label: 'Отчество'
   = f.email_field :email, autofocus: true, autocomplete: "email"
   - if @minimum_password_length
     em
-      | (
+      | ( минимум 
       = @minimum_password_length
-      |  characters minimum)
-  = f.password_field :password, autocomplete: "off"
-  = f.password_field :password_confirmation, autocomplete: "off"
+      |  символов )
+  = f.password_field :password, autocomplete: "off", label: 'Пароль'
+  = f.password_field :password_confirmation, autocomplete: "off",  label: 'Подтверждение пароля'
   .actions
-    = f.submit "Sign up"
+    = f.submit "Зарегистрироваться"
 = render "devise/shared/links"
