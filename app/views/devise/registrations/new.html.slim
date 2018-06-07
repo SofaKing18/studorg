@@ -2,9 +2,9 @@ h2
   | Регистрация
 = bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
   = devise_error_messages!
-  = f.text_field :last_name, label: 'Фамилия'
-  = f.text_field :first_name, label: 'Имя'
-  = f.text_field :middle_name, label: 'Отчество'
+  = f.text_field :email, label: 'Фамилия'
+  = f.text_field :email, label: 'Имя'
+  = f.text_field :email, label: 'Отчество'
   = f.email_field :email, autofocus: true, autocomplete: "email"
   - if @minimum_password_length
     em
